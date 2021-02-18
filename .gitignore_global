@@ -1,0 +1,5 @@
+gord-*.sh
+.vscode/symbols.json
+.history
+build_*
+
