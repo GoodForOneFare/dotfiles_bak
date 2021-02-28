@@ -41,6 +41,7 @@ alias gss='f() { git stash show stash@{$1} }; f'
 alias gbranches='git branch --sort=committerdate'
 alias reset-yarn-lock='git reset yarn.lock && git co yarn.lock && yarn && git add yarn.lock'
 alias nginx-update="erb .spin/nginx.conf.erb > /etc/nginx/conf.d/nginx.conf"
+alias find-tsserver-logs="find /home/spin/.vscode-server/data/logs/ |grep /tsserver\\\.log"
 
 export X_SPIN_HOST="$(echo $HOSTNAME | sed -r 's/-[0-9]*$//')"
 
