@@ -8,6 +8,6 @@ then
   if [[ "$SPIN_REPO_SOURCE_PATH" = "/src/github.com/shopify/shopify" ]]
   then
     cartridge insert GoodForOneFare/returns-team-bootstrap
-    . /cartridges/returns-team-bootstrap/setup.sh
+    . /cartridges/returns-team-bootstrap/setup.sh > /tmp/setup.log
   fi
 fi
