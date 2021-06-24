@@ -44,7 +44,7 @@ alias gdc='git diff --cached'
 alias gss='f() { git stash show stash@{$1} }; f'
 alias gbranches='git branch --sort=committerdate'
 alias reset-yarn-lock='git reset yarn.lock && git co yarn.lock && yarn && git add yarn.lock'
-alias nginx-update="erb .spin/nginx.conf.erb > /etc/nginx/conf.d/nginx.conf"
+alias nginx-update="erb fqdn="${SPIN_INSTANCE_FQDN}" ssl_certificate='/etc/nginx/ssl/tls.crt' ssl_certificate_key='/etc/nginx/ssl/tls.key' access_log='/dev/stdout' error_log='/dev/stderr' .spin/nginx.conf.erb > /etc/nginx/conf.d/nginx.conf"
 alias find-tsserver-logs="find /home/spin/.vscode-server/data/logs/ |grep /tsserver\\\.log"
 alias lint="node_modules/.bin/eslint --format codeframe --no-cache"
 
