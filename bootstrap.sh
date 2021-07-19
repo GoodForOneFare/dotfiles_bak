@@ -7,7 +7,7 @@ then
   # Only run nested steps in Spin + shopify/shopify workspaces.
   if [[ "$SPIN_REPO_SOURCE_PATH" = "/src/github.com/shopify/shopify" ]]
   then
-    cartridge insert GoodForOneFare/returns-team-bootstrap
-    . /cartridges/returns-team-bootstrap/setup.sh > /tmp/setup.log
+    # cartridge insert GoodForOneFare/returns-team-bootstrap
+    # . /cartridges/returns-team-bootstrap/setup.sh > /tmp/setup.log
   fi
 fi
