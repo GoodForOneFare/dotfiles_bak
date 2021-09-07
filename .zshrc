@@ -47,6 +47,7 @@ alias reset-yarn-lock='git reset yarn.lock && git co yarn.lock && yarn && git ad
 alias nginx-update="erb fqdn="${SPIN_INSTANCE_FQDN}" ssl_certificate='/etc/nginx/ssl/tls.crt' ssl_certificate_key='/etc/nginx/ssl/tls.key' access_log='/dev/stdout' error_log='/dev/stderr' .spin/nginx.conf.erb > /etc/nginx/conf.d/nginx.conf"
 alias find-tsserver-logs="find /home/spin/.vscode-server/data/logs/ |grep /tsserver\\\.log"
 alias lint="node_modules/.bin/eslint --format codeframe --no-cache"
+alias pr_url='echo "https://$(git config --get remote.origin.url | sed ''s/.\*github.com/github.com/'')/compare/$(git branch --show-current)?expand=1"'
 
 export X_SPIN_HOST="$(echo $HOSTNAME | sed -r 's/-[0-9]*$//')"
 
