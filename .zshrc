@@ -52,3 +52,7 @@ alias pr_url='echo "https://$(git config --get remote.origin.url | sed ''s/.\*gi
 export X_SPIN_HOST="$(echo $HOSTNAME | sed -r 's/-[0-9]*$//')"
 
 PROMPT='$X_SPIN_HOST %(?.%F{green}√.%F{red}?%?)%f %B%c%b $vcs_info_msg_0_ $ '
+
+export SAVEHIST=5000
+export HISTSIZE=1000
+export HISTFILE=/home/spin/.zsh_history
