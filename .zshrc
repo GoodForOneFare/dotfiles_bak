@@ -5,6 +5,8 @@ if [[ -f /etc/zsh/zshrc.default.inc.zsh ]]; then
   . ./.zshrc_spin
 elif [[ "$SPIN" == "1" ]]; then
   . ./.zshrc_spin_legacy
+  export X_SPIN_HOST="$(echo $HOSTNAME | sed -r 's/-[0-9]*$//')"
+  PROMPT='$X_SPIN_HOST %(?.%F{green}√.%F{red}?%?)%f %B%c%b $vcs_info_msg_0_ $ '
 else
   . ./.zshrc_local
 fi
