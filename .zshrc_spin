@@ -1,3 +1,10 @@
+export HISTFILE=/home/spin/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=5000
+
+setopt HIST_FIND_NO_DUPS
+setopt INC_APPEND_HISTORY
+
 export SPIN_LEGACY="0"
 export ISOSPIN="1"
 
