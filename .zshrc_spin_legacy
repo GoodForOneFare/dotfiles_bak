@@ -1,0 +1,8 @@
+export X_SPIN_HOST="$(echo $HOSTNAME | sed -r 's/-[0-9]*$//')"
+export SPIN_LEGACY="1"
+
+PROMPT='$X_SPIN_HOST %(?.%F{green}√.%F{red}?%?)%f %B%c%b $vcs_info_msg_0_ $ '
+
+alias nginx-update="erb fqdn="${SPIN_INSTANCE_FQDN}" ssl_certificate='/etc/nginx/ssl/tls.crt' ssl_certificate_key='/etc/nginx/ssl/tls.key' access_log='/dev/stdout' error_log='/dev/stderr' .spin/nginx.conf.erb > /etc/nginx/conf.d/nginx.conf"
+alias find-tsserver-logs="find /home/spin/.vscode-server/data/logs/ |grep /tsserver\\\.log"
+alias pr_url='echo "https://$(git config --get remote.origin.url | sed ''s/.\*github.com/github.com/'')/compare/$(git branch --show-current)?expand=1"'
