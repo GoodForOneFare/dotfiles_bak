@@ -1,5 +1,4 @@
 export SPIN_LEGACY="1"
-export X_SPIN_HOST="$(echo $HOSTNAME | sed -r 's/-[0-9]*$//')"
 
 autoload -Uz vcs_info
 precmd_functions+=( vcs_info )
@@ -12,7 +11,7 @@ zstyle ':vcs_info:git:*' formats '%F{200}[%b%u%c]%f'
 zstyle ':vcs_info:*' enable git
 
 # shellcheck disable=SC2016
-PROMPT='$X_SPIN_HOST %(?.%F{green}√.%F{red}?%?)%f %B%c%b $vcs_info_msg_0_ $ '
+PROMPT='$SPIN_INSTANCE_FQDN %(?.%F{green}√.%F{red}?%?)%f %B%c%b $vcs_info_msg_0_ $ '
 
 alias nginx-update="erb fqdn="${SPIN_INSTANCE_FQDN}" ssl_certificate='/etc/nginx/ssl/tls.crt' ssl_certificate_key='/etc/nginx/ssl/tls.key' access_log='/dev/stdout' error_log='/dev/stderr' .spin/nginx.conf.erb > /etc/nginx/conf.d/nginx.conf"
 alias find-tsserver-logs="find /home/spin/.vscode-server/data/logs/ |grep /tsserver\\\.log"
